@@ -1,55 +1,45 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Test {
+namespace CharacterCustomize {
 	public class SpriteSelect : MonoBehaviour {
 
-		public Sprite Head1;
-		public Sprite Head2;
-		public Sprite Head3;
+		public string Key;
+		public bool UpdateEachFrame = false;
+		private int val = -1;
+
+		public Sprite[] Sprites;
 
 		// Use this for initialization
 		void Start () {
 			UpdateSprite ();
 		}
-		
-		// Update is called once per frame
-		void Update () {
-		
+
+		void Update() {
+			if (UpdateEachFrame) {
+				UpdateSprite();
+			}
 		}
 
 		public void SelectSprite (int sprite) {
-				switch (sprite) {
-				case 2:
-					PlayerPrefs.SetInt("Head", sprite);
-					break;
-				case 3:
-					PlayerPrefs.SetInt("Head", sprite);
-					break;
-				default:
-					PlayerPrefs.SetInt("Head", 1);
-					break;
-				}
-				UpdateSprite();
+			if (sprite < 0 || sprite >= Sprites.Length) {
+				PlayerPrefs.SetInt(Key, 0);
+			} else {
+				PlayerPrefs.SetInt(Key, sprite);
+			}
+			UpdateSprite();
 		}
 
 		private void UpdateSprite() {
-			Sprite s = Head1;
-			if (PlayerPrefs.HasKey ("Head")) {
-				int v = PlayerPrefs.GetInt("Head");
-				switch (v) {
-				case 2:
-					s = Head2;
-					break;
-				case 3:
-					s = Head3;
-					break;
-				default:
-					break;
+			if (PlayerPrefs.HasKey (Key)) {
+				int k = PlayerPrefs.GetInt(Key);
+				if (k != val) {
+					val = k;
+					if (k >= 0 && k < Sprites.Length) {
+						gameObject.GetComponent<SpriteRenderer>().sprite = Sprites[k];
+					}
 				}
 			}
-
-			gameObject.GetComponent<SpriteRenderer>().sprite = s;
 		}
 	}
 }
