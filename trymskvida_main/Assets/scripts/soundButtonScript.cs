@@ -35,5 +35,9 @@ namespace Test {
 				AudioListener.pause = false;
 			}
 	}
+
+		void Awake(){
+			DontDestroyOnLoad (transform.gameObject);
+		}
 }
 }

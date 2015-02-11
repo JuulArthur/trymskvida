@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{2435C18B-E617-CA24-8E7B-74D5F67F9B09}</ProjectGuid>
+	<ProjectGuid>{5AE1ED31-CDBF-15A2-EA14-E59C4505C9D5}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -46,9 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\moveHammer.cs" />
-     <Compile Include="Assets\playerAnimation\playerController.cs" />
+     <Compile Include="Assets\scripts\cameraScript.cs" />
      <Compile Include="Assets\scripts\loadLevel.cs" />
+     <Compile Include="Assets\scripts\moveHammer.cs" />
+     <Compile Include="Assets\scripts\playerController.cs" />
      <Compile Include="Assets\scripts\soundButtonScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
