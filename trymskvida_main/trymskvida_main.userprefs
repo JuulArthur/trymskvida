@@ -1,13 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/ThorsHead.cs">
     <Files>
-      <File FileName="Assets/scripts/moveHammer.cs" Line="15" Column="15" />
+      <File FileName="Assets/scripts/moveHammer.cs" Line="1" Column="1" />
       <File FileName="Assets/scripts/playerController.cs" Line="1" Column="1" />
       <File FileName="Assets/scripts/soundButtonScript.cs" Line="1" Column="1" />
       <File FileName="Assets/scripts/loadLevel.cs" Line="1" Column="1" />
       <File FileName="Assets/PersistentObject.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/ThorsHead.cs" Line="23" Column="71" />
+      <File FileName="Assets/scripts/ThorsHead.cs" Line="19" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
