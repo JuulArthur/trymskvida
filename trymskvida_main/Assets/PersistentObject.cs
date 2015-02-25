@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class cameraScript : MonoBehaviour {
+public class PersistentObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +13,7 @@ public class cameraScript : MonoBehaviour {
 	
 	}
 
-	void Awake() {
+	void Awake(){
 		DontDestroyOnLoad (transform.gameObject);
-		}
+	}
 }

@@ -11,8 +11,8 @@ public class moveHammer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () { 
-		end = new Vector3 (5, 4, -1);
-		speed = 0.5f;
+		end = new Vector3 (100, 80, -1);
+		speed = 10f;
 		state = 0;
 		animator = this.GetComponent<Animator>();
 	}

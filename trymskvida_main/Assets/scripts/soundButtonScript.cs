@@ -25,6 +25,7 @@ namespace Test {
 		}
 
 		public void toggleSound(){
+			Debug.Log ("lol");
 			if (soundBool) {
 				soundButton.image.sprite = noSoundSprite;
 				soundBool = false;
