@@ -3,7 +3,7 @@ using System.Collections;
 
 public class loadLevel : MonoBehaviour {
 
-	public void loadGivenLevel(int level) {
+	public void loadGivenLevel(string level) {
 		Application.LoadLevel (level);
 		}
 }
