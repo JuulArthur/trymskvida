@@ -14,6 +14,8 @@ namespace PlayerControl {
 		public Vector2 walkTarget;
 		private Vector2 walkStart;
 
+		private float wavePhase = 0;
+
 		public GameObject Head;
 		public GameObject Torso;
 		public GameObject LeftHand;
@@ -74,10 +76,25 @@ namespace PlayerControl {
 				}
 			}
 			if (wavingArms) {
-				// TODO
+				wavePhase += Time.deltaTime;
+				if (wavePhase < 0.2f) {
+					LeftHand.rigidbody2D.AddRelativeForce(-Vector2.right * 40.0f* (Random.value + 0.5f), ForceMode2D.Force);
+					RightHand.rigidbody2D.AddRelativeForce(-Vector2.right * 30.0f * (Random.value + 0.5f), ForceMode2D.Force);
+				} else if (wavePhase < 0.4f) {
+					RightHand.rigidbody2D.AddRelativeForce(Vector2.right * 40.0f * (Random.value + 0.5f), ForceMode2D.Force);
+					LeftHand.rigidbody2D.AddRelativeForce(Vector2.right * 30.0f* (Random.value + 0.5f), ForceMode2D.Force);
+				} 
+				if (wavePhase > 0.4f) {
+					wavePhase = 0.0f;
+				}
 			}
 			if (shaking) {
-				// TODO
+				Head.rigidbody2D.AddRelativeForce(Random.onUnitSphere * 0.4f, ForceMode2D.Impulse);
+				//Torso.rigidbody2D.AddRelativeForce(Random.onUnitSphere * 0.2f, ForceMode2D.Impulse);
+				//LeftHand.rigidbody2D.AddRelativeForce(Random.onUnitSphere * 0.2f, ForceMode2D.Impulse);
+				//RightHand.rigidbody2D.AddRelativeForce(Random.onUnitSphere * 0.2f, ForceMode2D.Impulse);
+				//LeftFoot.rigidbody2D.AddRelativeForce(Random.onUnitSphere * 0.2f, ForceMode2D.Impulse);
+				//RightFoot.rigidbody2D.AddRelativeForce(Random.onUnitSphere * 0.2f, ForceMode2D.Impulse);
 			}
 		}
 	}
