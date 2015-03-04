@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class VoiceController : MonoBehaviour {
 
@@ -9,10 +10,18 @@ public class VoiceController : MonoBehaviour {
 	private int clipNumber = 0;
 
 	private bool play = false;
+	private bool muted = false;
+
+	public Sprite voiceSprite;
+	public Sprite noVoiceSprite;
+
+	private Button voiceButton;
 
 	// Use this for initialization
 	void Start () {
+		voiceButton = GetComponent<Button>();
 		Source = GameObject.Find ("VoiceSource").audio;
+		Rewind ();
 	}
 	
 	// Update is called once per frame
@@ -24,17 +33,17 @@ public class VoiceController : MonoBehaviour {
 		}
 	}
 
-	public void Play() {
+	private void Play() {
 		play = true;
 		DoPlayThisClip ();
 	}
 
-	public void Stop() {
+	private void Stop() {
 		play = false;
 		Source.Stop ();
 	}
 
-	public void Rewind() {
+	private void Rewind() {
 		clipNumber = 0;
 		Play ();
 	}
@@ -43,6 +52,19 @@ public class VoiceController : MonoBehaviour {
 		if (clipNumber < clips.Length) {
 			Source.clip = clips[clipNumber];
 			Source.Play ();
+		}
+	}
+
+	public void ToggleMute () {
+		if (muted) {
+			Source.mute = false;
+			Rewind ();
+			muted = false;
+			voiceButton.image.sprite = voiceSprite;
+		} else {
+			Source.mute = true;
+			muted = true;
+			voiceButton.image.sprite = noVoiceSprite;
 		}
 	}
 }

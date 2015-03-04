@@ -8,6 +8,7 @@ namespace Test {
 
 		public Sprite soundSprite;
 		public Sprite noSoundSprite;
+		private AudioSource Source;
 
 		private bool soundBool;
 		
@@ -16,6 +17,7 @@ namespace Test {
 		// Use this for initialization
 		void Start () {
 			soundButton = GetComponent<Button>();
+			Source = GameObject.Find ("MusicSource").audio;
 			soundBool = true;
 		}
 		
@@ -25,15 +27,14 @@ namespace Test {
 		}
 
 		public void toggleSound(){
-			Debug.Log ("lol");
 			if (soundBool) {
 				soundButton.image.sprite = noSoundSprite;
 				soundBool = false;
-				AudioListener.pause = true;
+				Source.mute = true;
 			} else {
 				soundButton.image.sprite = soundSprite;
 				soundBool = true;
-				AudioListener.pause = false;
+				Source.mute = false;
 			}
 	}
 
