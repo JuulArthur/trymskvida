@@ -19,11 +19,7 @@ namespace CharacterCustomize {
 		// Use this for initialization
 		void Start () {
 			UpdateSprite ();
-			if (!PlayerPrefs.HasKey(useDressKey)) {
-				PlayerPrefs.SetInt(useDressKey, UseDress ? 1 : 0);
-			} else {
-				UseDress = PlayerPrefs.GetInt(useDressKey) == 1;
-			}
+
 		}
 
 		void Update() {
@@ -76,6 +72,11 @@ namespace CharacterCustomize {
 		}
 
 		private void UpdateSprite() {
+			if (!PlayerPrefs.HasKey(useDressKey)) {
+				PlayerPrefs.SetInt(useDressKey, UseDress ? 1 : 0);
+			} else {
+				UseDress = PlayerPrefs.GetInt(useDressKey) == 1;
+			}
 			if (UseDress) {
 				UpdateDressSprite ();
 			} else {
