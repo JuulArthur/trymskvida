@@ -1,10 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\DressSetButtonsScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\TorUseDress.cs">
     <Files>
-      <File FileName="Assets\scripts\SpriteSelect.cs" Line="12" Column="3" />
-      <File FileName="Assets\scripts\SelectCustomizeGroupScript.cs" Line="79" Column="35" />
-      <File FileName="Assets\scripts\DressSetButtonsScript.cs" Line="37" Column="53" />
+      <File FileName="Assets\scripts\TorUseDress.cs" Line="23" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
