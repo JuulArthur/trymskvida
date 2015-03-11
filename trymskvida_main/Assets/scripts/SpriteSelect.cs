@@ -10,6 +10,11 @@ namespace CharacterCustomize {
 
 		public Sprite[] Sprites;
 
+		public string DressKey;
+		public Sprite[] Dress;
+		public bool UseDress = false;
+		private int dressVal = -1;
+
 		// Use this for initialization
 		void Start () {
 			UpdateSprite ();
@@ -30,7 +35,15 @@ namespace CharacterCustomize {
 			UpdateSprite();
 		}
 
-		private void UpdateSprite() {
+		public void SelectDress(int sprite) {
+			if (sprite < 0 || sprite >= Dress.Length) {
+				PlayerPrefs.SetInt(DressKey, 0);
+			} else {
+				PlayerPrefs.SetInt(DressKey, sprite);
+			}
+		}
+
+		private void UpdateNormalSprite() {
 			if (PlayerPrefs.HasKey (Key)) {
 				int k = PlayerPrefs.GetInt(Key);
 				if (k != val) {
@@ -39,6 +52,26 @@ namespace CharacterCustomize {
 						gameObject.GetComponent<SpriteRenderer>().sprite = Sprites[k];
 					}
 				}
+			}
+		}
+
+		private void UpdateDressSprite() {
+			if (PlayerPrefs.HasKey (DressKey)) {
+				int k = PlayerPrefs.GetInt(DressKey);
+				if (k != dressVal) {
+					dressVal = k;
+					if (k >= 0 && k < Dress.Length) {
+						gameObject.GetComponent<SpriteRenderer>().sprite = Dress[k];
+					}
+				}
+			}
+		}
+
+		private void UpdateSprite() {
+			if (UseDress) {
+				UpdateDressSprite ();
+			} else {
+				UpdateNormalSprite ();
 			}
 		}
 	}
