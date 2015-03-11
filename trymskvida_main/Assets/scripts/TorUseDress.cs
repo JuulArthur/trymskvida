@@ -4,6 +4,9 @@ using System.Collections;
 namespace CharacterCustomize {
 	public class TorUseDress : MonoBehaviour {
 
+		public bool initUSeDressTo = false;
+
+
 		public bool UseDress {
 			get {
 				if (PlayerPrefs.HasKey (SpriteSelect.useDressKey)) {
@@ -17,6 +20,10 @@ namespace CharacterCustomize {
 				else
 					PlayerPrefs.SetInt (SpriteSelect.useDressKey, 0);
 			}
+		}
+
+		void Start() {
+			PlayerPrefs.SetInt (SpriteSelect.useDressKey, initUSeDressTo ? 1 : 0);
 		}
 	}
 }
