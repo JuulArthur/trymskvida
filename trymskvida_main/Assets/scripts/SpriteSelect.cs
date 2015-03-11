@@ -60,6 +60,10 @@ namespace CharacterCustomize {
 		}
 
 		private void UpdateDressSprite() {
+			if (Dress.Length <= 0) {
+				UpdateNormalSprite();
+				return;
+			}
 			if (PlayerPrefs.HasKey (DressKey)) {
 				int k = PlayerPrefs.GetInt(DressKey);
 				if (k != dressVal) {
