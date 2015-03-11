@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 namespace CharacterCustomize {
-	public class Dress : MonoBehaviour {
+	public class DressSetButtonsScript : MonoBehaviour {
 
 		public Toggle[] SelectButtons;
 		
@@ -39,6 +39,11 @@ namespace CharacterCustomize {
 					btn.interactable = false;
 				}
 			}
+		}
+
+		public void SetDress(int dress) {
+			if (dress >= 0 && dress < DressSelect.Length)
+				PlayerPrefs.SetInt (DressKey, dress);
 		}
 		
 		// Update is called once per frame

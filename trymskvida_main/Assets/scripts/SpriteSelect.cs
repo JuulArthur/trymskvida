@@ -14,10 +14,16 @@ namespace CharacterCustomize {
 		public Sprite[] Dress;
 		public bool UseDress = false;
 		private int dressVal = -1;
+		private string useDressKey = "TorUseDress";
 
 		// Use this for initialization
 		void Start () {
 			UpdateSprite ();
+			if (!PlayerPrefs.HasKey(useDressKey)) {
+				PlayerPrefs.SetInt(useDressKey, UseDress ? 1 : 0);
+			} else {
+				UseDress = PlayerPrefs.GetInt(useDressKey) == 1;
+			}
 		}
 
 		void Update() {
