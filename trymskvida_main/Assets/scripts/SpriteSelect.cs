@@ -14,7 +14,7 @@ namespace CharacterCustomize {
 		public Sprite[] Dress;
 		public bool UseDress = false;
 		private int dressVal = -1;
-		private string useDressKey = "TorUseDress";
+		public const string useDressKey = "TorUseDress";
 
 		// Use this for initialization
 		void Start () {
@@ -33,6 +33,8 @@ namespace CharacterCustomize {
 		}
 
 		public void SelectSprite (int sprite) {
+			if (PlayerPrefs.HasKey(useDressKey))
+				UseDress = PlayerPrefs.GetInt(useDressKey) == 1;
 			if (sprite < 0 || sprite >= Sprites.Length) {
 				PlayerPrefs.SetInt(Key, 0);
 			} else {

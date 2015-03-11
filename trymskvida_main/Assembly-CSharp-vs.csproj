@@ -53,6 +53,7 @@
      <Compile Include="Assets\scripts\SelectCustomizeGroupScript.cs" />
      <Compile Include="Assets\scripts\SpriteSelect.cs" />
      <Compile Include="Assets\scripts\ThorsHead.cs" />
+     <Compile Include="Assets\scripts\TorUseDress.cs" />
      <Compile Include="Assets\scripts\VoiceController.cs" />
      <Compile Include="Assets\scripts\loadLevel.cs" />
      <Compile Include="Assets\scripts\moveHammer.cs" />
