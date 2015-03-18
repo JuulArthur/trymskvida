@@ -69,6 +69,7 @@ public class VoiceController : MonoBehaviour {
 			voiceButton.image.sprite = voiceSprite;
 		} else {
 			Source.mute = true;
+			play = false;
 			muted = true;
 			voiceButton.image.sprite = noVoiceSprite;
 		}
