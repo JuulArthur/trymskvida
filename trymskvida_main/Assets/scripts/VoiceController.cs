@@ -23,6 +23,9 @@ public class VoiceController : MonoBehaviour {
 		voiceButton = GetComponent<Button>();
 		Source = GameObject.Find ("VoiceSource").audio;
 		MusicSource = GameObject.Find ("MusicSource").audio;
+		if (Source.mute) {
+			voiceButton.image.sprite = noVoiceSprite;
+		}
 		Rewind ();
 	}
 	
