@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class VoiceController : MonoBehaviour {
 
 	private AudioSource Source;
+	private AudioSource MusicSource;
 
 	public AudioClip[] clips;
 	private int clipNumber = 0;
@@ -21,6 +22,7 @@ public class VoiceController : MonoBehaviour {
 	void Start () {
 		voiceButton = GetComponent<Button>();
 		Source = GameObject.Find ("VoiceSource").audio;
+		MusicSource = GameObject.Find ("MusicSource").audio;
 		Rewind ();
 	}
 	
@@ -30,6 +32,10 @@ public class VoiceController : MonoBehaviour {
 			clipNumber++;
 			play = clipNumber < clips.Length;
 			DoPlayThisClip ();
+		} else if (play && MusicSource.volume >= 0.10) {
+			MusicSource.volume -= 0.003f;
+		} else if (MusicSource.volume < 0.21){
+			MusicSource.volume += 0.003f;
 		}
 	}
 
