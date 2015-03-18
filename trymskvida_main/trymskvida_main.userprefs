@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\TorUseDress.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/VoiceController.cs">
     <Files>
-      <File FileName="Assets\scripts\TorUseDress.cs" Line="26" Column="72" />
-      <File FileName="Assets\scripts\ThorsHead.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/VoiceController.cs" Line="23" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
