@@ -49,6 +49,7 @@
      <Compile Include="Assets\PersistentObject.cs" />
      <Compile Include="Assets\scripts\DressSetButtonsScript.cs" />
      <Compile Include="Assets\scripts\ForceMainMenu.cs" />
+     <Compile Include="Assets\scripts\Hammer.cs" />
      <Compile Include="Assets\scripts\PlayerMoveScript.cs" />
      <Compile Include="Assets\scripts\SelectCustomizeGroupScript.cs" />
      <Compile Include="Assets\scripts\SpriteSelect.cs" />
