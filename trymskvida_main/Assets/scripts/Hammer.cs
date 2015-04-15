@@ -8,6 +8,8 @@ public class Hammer : MonoBehaviour {
 	public float RotationVelocity = 5f;
 	public Vector3 EndPosition;
 	public float rotationTime = 1f;
+	public float waitTime;
+	public bool wait;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +19,9 @@ public class Hammer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!(transform.position == EndPosition)) {
+		if (waitTime >= 0) {
+			waitTime -= 0.1f;
+		} else if (!(transform.position == EndPosition)) {
 				InTime -= Time.deltaTime;
 				InTime = InTime < 0 ? 0 : InTime;
 				transform.Rotate (Vector3.forward * Time.deltaTime * RotationVelocity);
